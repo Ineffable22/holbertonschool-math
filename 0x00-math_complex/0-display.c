@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * display_complex_number - displays the complex numbers,
- * followed by a new line
+ * followed by a new line.
  * @c: complex number
  */
 void display_complex_number(complex c)
@@ -13,8 +13,6 @@ void display_complex_number(complex c)
 			c.im = -(c.im);
 			i = '-';
 		}
-	if (c.re < 0)
-                 c.re = -(c.re);
 	if (c.re != 0 && c.im != 0)
 		{
 		if (c.im == 1)
