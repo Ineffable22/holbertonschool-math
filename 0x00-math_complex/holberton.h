@@ -1,6 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <stdio.h>
+#include <math.h>
 
 /**
  * struct Complex - a dog's basic info
@@ -17,5 +18,6 @@ typedef struct Complex
 
 void display_complex_number(complex c);
 complex conjugate(complex c);
+double modulus(complex c);
 
 #endif
