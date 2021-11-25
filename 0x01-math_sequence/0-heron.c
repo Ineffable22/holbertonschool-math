@@ -1,20 +1,5 @@
 #include "heron.h"
 /**
- * _sqrt - Ejecutes square root
- * @p: number to calculate the root
- *
- * Return: The result of the square root
- */
-double _sqrt(double p)
-{
-	double t = 1;
-
-	while (t * t != p)
-		t = (t + (p / t)) / 2;
-	return (t);
-}
-
-/**
  * heron - Creates The Heron Sequence
  * @p: number to calculate the root
  * @x0: first number of variable
@@ -24,26 +9,29 @@ double _sqrt(double p)
  */
 t_cell *heron(double p, double x0)
 {
-	t_cell *node, *head = NULL, *tmp = head;
-	double abs = 0;
+	double fx = 0, _error = 0;
+	t_cell *head = NULL, *new = NULL, *tail;
 
-	if (p < 0 || x0 == 0)
-		return (NULL);
-	node = malloc(sizeof(t_cell));
-	if (node == NULL)
+	new = malloc(sizeof(t_cell));
+	if (!new)
 		return (NULL);
 
-	node->elt = x0;
-	node->next = NULL;
-	head = node;
-	abs = (x0 > _sqrt(p)) ? (x0 - _sqrt(p)) : (_sqrt(p) - x0);
-	if (abs > 0.0000001)
-	{
-		head = heron(p, (0.5) * (x0 + (p / x0)));
-		tmp = head;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = node;
-	}
+	fx = x0;
+
+	head = new;
+	new->elt = fx;
+	new->next = NULL;
+	_error = ((fx * fx) - p);
+	_error = (_error >= 0) ? _error : -(_error);
+	if (_error <= 0.0000001)
+		return (head);
+
+	fx = (0.5) * (x0 + (p / x0));
+	head = heron(p, fx);
+	tail = head;
+	while (tail->next)
+		tail = tail->next;
+	tail->next = new;
+
 	return (head);
 }
