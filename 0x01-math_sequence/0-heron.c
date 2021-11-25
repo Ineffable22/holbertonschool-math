@@ -27,6 +27,8 @@ t_cell *heron(double p, double x0)
 	t_cell *node, *head = NULL, *tmp = head;
 	double abs = 0;
 
+	if (p < 0 || x0 == 0)
+		return (NULL);
 	node = malloc(sizeof(t_cell));
 	if (node == NULL)
 		return (NULL);
