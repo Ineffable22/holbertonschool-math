@@ -18,8 +18,8 @@ double rectangle_method(double a, double b, int steps)
 		return (0);
 	difference = checker(a, b);
 	width = (difference / steps);
-	midpoint = a + width;
-	while (i <= steps)
+	midpoint = a;
+	while (i < steps)
 	{
 		height = finding_height(midpoint);
 		midpoint += width;
