@@ -18,7 +18,6 @@ double rectangle_method(double a, double b, int steps)
 	if (steps < 0)
 		return (0);
 	difference = checker(a, b);
-	printf("diffe -> %f\n", difference);
 	width = (difference / steps);
 	midpoint = a + width;
 	while (i <= steps)
