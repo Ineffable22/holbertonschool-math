@@ -6,5 +6,6 @@
 
 double rectangle_method(double a, double b, int steps);
 double finding_height(double value);
+double checker(double a, double b);
 
 #endif
