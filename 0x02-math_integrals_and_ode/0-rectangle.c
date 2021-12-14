@@ -13,7 +13,7 @@ double rectangle_method(double a, double b, int steps)
 	/* b = 1   a = 0 */
 	double height = 0;
 	double width = ((b - a) / steps);
-	double midpoint = width;
+	double midpoint = a + width;
 	double result = 0;
 	int i = 0;
 
