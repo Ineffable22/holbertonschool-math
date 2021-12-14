@@ -15,7 +15,7 @@ double rectangle_method(double a, double b, int steps)
 	int i = 0;
 	double difference = 0;
 
-	if (steps <= 0)
+	if (steps < 0)
 		return (0);
 	difference = checker(a, b);
 	printf("diffe -> %f\n", difference);
