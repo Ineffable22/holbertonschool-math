@@ -1,5 +1,4 @@
 #include "rectangle.h"
-#include <stdio.h>
 /**
  * rectangle_method - Calculates with rectangle method.
  * @a: first number.
